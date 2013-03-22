@@ -249,16 +249,7 @@ function creatFileObject(fileSrc) {
 			settings[k] = appConfig.coffeescript[k];
 		}
 	}
-	if (type === 'js') {
-		for (var k in appConfig.js) {
-			settings[k] = appConfig.js[k];
-		}
-	}
-	if (type === 'css') {
-		for (var k in appConfig.css) {
-			settings[k] = appConfig.css[k];
-		}
-	}
+
 	return {
 		id: util.createRdStr(),							//ID				
 		pid: '',										//Project ID
@@ -282,7 +273,6 @@ function getFilesOfDirectory(src){
 	
 	files.forEach(function(item){
 		filesObject[item] = creatFileObject(item);
-		// console.log(filesObject[item]);
 	});
 
 	return filesObject;
@@ -361,9 +351,7 @@ function getDefaultOutput(input){
 		'.less': '.css',
 		'.sass': '.css',
 		'.scss': '.css',
-		'.coffee': '.js',
-		'.js':'.min.js',
-		'.css':'.min.css'
+		'.coffee': '.js'
 	};
 
 	var fileName = path.basename(input);

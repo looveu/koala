@@ -43,9 +43,21 @@ div
 					input(type="checkbox",class="lint")
 					span use jsl to check the compilation
 
+			when "js"
+				label
+					input(type="checkbox",class="compress")
+					span minisize
+
+			when "css"
+				label
+					input(type="checkbox",class="compress")
+					span minisize
+
 	div.optionItem.option_outputStyle
 		h3.title output style:
 		select.outputStyle
+			hr
+			div=type
 			case type
 				when "less"
 					option(value="") normal
@@ -57,7 +69,11 @@ div
 					option(value="compact") compact
 					option(value="compressed") compressed
 				when "coffee"
+					hr
+					div=type
 					option(value="") normal
+					option(value="uglifycompressed") uglifycompressed
+
 
 	footer
 		button(class="compileManually") compile

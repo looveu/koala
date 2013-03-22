@@ -69,7 +69,7 @@ exports.renderSettings = function (data) {
 
 	//remove invalid options
 	//if (file.type === 'less') element.find('.option_args').remove();
-	// if (file.type === 'coffee') element.find('.option_outputStyle').remove();
+	if (file.type === 'coffee') element.find('.option_outputStyle').remove();
 
 	//render options
 	if (/sass|scss|less/.test(file.type)) {
@@ -98,9 +98,6 @@ exports.renderSettings = function (data) {
 		if (settings.lint) {
 			element.find('.lint')[0].checked = true;
 		}
-		// if (settings.uglifycompressed) {
-		// 	element.find('.uglifycompressed')[0].checked = true;
-		// }		
 	}
 
 	//render output style option
@@ -113,5 +110,6 @@ exports.renderSettings = function (data) {
 			}
 		} 
 	}
+
 	return element;
 }

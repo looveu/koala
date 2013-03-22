@@ -318,6 +318,18 @@ body {
 #filelist .file_item.type_coffee:before {
   background-position: -165px -124px;
 }
+#filelist .file_item.type_js:before {
+  background-position: 0px -179px;
+}
+#filelist .file_item.type_css:before {
+  background-position: -55px -179px;
+}
+#filelist .file_item.type_json{
+  display: none;
+}
+#filelist .file_item.type_jsm{
+  display: none;
+}
 #filelist .name,
 #filelist .output {
   overflow: hidden;
@@ -447,6 +459,12 @@ body {
 }
 #extend .type_coffee:after {
   content: 'CoffeeScript';
+}
+#extend .type_js:after {
+  content: 'javascript';
+}
+#extend .type_css:after {
+  content: 'css';
 }
 #extend .targetName {
   text-align: center;
